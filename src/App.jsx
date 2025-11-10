@@ -1,31 +1,19 @@
 import {useState} from 'react'
 
 function App(){
+  const [text, setText] = useState("")
 
-  const [count, setCount] = useState(0)
-
-  const increment = ()=>{
-    setCount(count+1)
-  }
-
-  const decrement = ()=>{
-    setCount(count - 1)
-  }
-
-  const reset =()=>{
-    setCount(0)
+  const insideText = (e) =>{
+    setText(e.target.value)
   }
 
   return(
     <>
-    
-      <button onClick={increment}>Increase</button>
-      <button onClick={decrement}>Decrease</button>
-      <button onClick={reset}>Reset</button>
-      <p>count is : {count}</p>
-    
+    <input type="text" value={text} onChange={insideText} placeholder='Enter Your Text Here'/>
+    <p>The text is {text}</p>
     </>
   )
+
 }
 
-export default App;
+export default App
