@@ -6,11 +6,13 @@ function App(){
 
   const addItems = () =>{
     setList(oldList=>[...oldList,text])
+    setText("")
     
   }
 
   const liveText = (e)=>{
     setText(e.target.value)
+
   }
   return (
     <>
@@ -20,8 +22,8 @@ function App(){
 
 
     <ul>
-      {list.map((list)=>(
-        <li>{list}</li>
+      {list.map((item, index)=>(
+        <li key={index}>{item}</li>
       ))}
     </ul>
     </>
